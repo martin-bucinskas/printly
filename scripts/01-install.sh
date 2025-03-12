@@ -44,6 +44,7 @@ install_packages() {
 apply_patches() {
     print_status_header "Applying patches..."
     patch -p1 < "$(pwd)/patches/klippy-requirements.txt.diff"
+    patch -p1 < "$(pwd)/patches/moonraker-requirements.txt.diff"
 }
 
 create_virtualenvs() {
