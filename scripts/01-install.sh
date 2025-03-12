@@ -30,7 +30,7 @@ create_directories() {
     print_status_header "Setting up printer data files..."
     cp "$(pwd)/templates/printer.cfg" "${PRINTER_DATA_DIR}/config/printer.cfg"
     cp "$(pwd)/templates/mainsail.cfg" "${PRINTER_DATA_DIR}/config/mainsail.cfg"
-    cp "$(pwd)/templates/moonraker.cfg" "${PRINTER_DATA_DIR}/config/moonraker.cfg"
+    cp "$(pwd)/templates/moonraker.conf" "${PRINTER_DATA_DIR}/config/moonraker.conf"
     cp "$(pwd)/templates/mainsail-config.json" "${PRINTER_DATA_DIR}/config/mainsail-config.json"
 
     sed -i "s|###MCU_SERIAL###|${VAR_MCU_SERIAL}|g" "${PRINTER_DATA_DIR}/config/printer.cfg"
@@ -72,7 +72,7 @@ create_virtualenvs() {
     deactivate
 
     source "${MOONRAKER_ENV}/bin/activate"
-    pip install -r "$(pwd)/services/moonraker/requirements.txt"
+    pip install -r "$(pwd)/services/moonraker/scripts/moonraker-requirements.txt"
     deactivate
 }
 
