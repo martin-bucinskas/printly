@@ -41,6 +41,11 @@ install_packages() {
       arm-none-eabi-newlib arm-none-eabi-gcc arm-none-eabi-binutils
 }
 
+apply_patches() {
+    print_status_header "Applying patches..."
+    patch -p1 < "$(pwd)/patches/klippy-requirements.txt.diff"
+}
+
 create_virtualenvs() {
     print_status_header "Creating python virtual environments..."
     source "${KLIPPY_ENV}/bin/activate"
