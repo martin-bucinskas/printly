@@ -1,0 +1,9 @@
+[submodule "services/klipper"]
+	path = services/klipper
+	url = git@github.com:Klipper3d/klipper.git
+[submodule "services/moonraker"]
+	path = services/moonraker
+	url = git@github.com:Arksine/moonraker.git
+[submodule "services/mainsail"]
+	path = services/mainsail
+	url = git@github.com:mainsail-crew/mainsail.git
