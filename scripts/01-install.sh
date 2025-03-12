@@ -33,9 +33,9 @@ create_directories() {
     cp "$(pwd)/templates/moonraker.cfg" "${PRINTER_DATA_DIR}/config/moonraker.cfg"
     cp "$(pwd)/templates/mainsail-config.json" "${PRINTER_DATA_DIR}/config/mainsail-config.json"
 
-    sed -i "s/###MCU_SERIAL###/${VAR_MCU_SERIAL}/g" "${PRINTER_DATA_DIR}/config/printer.cfg"
-    sed -i "s/###VIRTUAL_SDCARD_PATH###/${VAR_VIRTUAL_SDCARD_PATH}/g" "${PRINTER_DATA_DIR}/config/printer.cfg"
-    sed -i "s/###VIRTUAL_SDCARD_PATH###/${VAR_VIRTUAL_SDCARD_PATH}/g" "${PRINTER_DATA_DIR}/config/mainsail.cfg"
+    sed -i "s|###MCU_SERIAL###|${VAR_MCU_SERIAL}|g" "${PRINTER_DATA_DIR}/config/printer.cfg"
+    sed -i "s|###VIRTUAL_SDCARD_PATH###|${VAR_VIRTUAL_SDCARD_PATH}|g" "${PRINTER_DATA_DIR}/config/printer.cfg"
+    sed -i "s|###VIRTUAL_SDCARD_PATH###|${VAR_VIRTUAL_SDCARD_PATH}|g" "${PRINTER_DATA_DIR}/config/mainsail.cfg"
 
     print_status_header "Creating virtual environments in ${ENV_DIR}"
     mkdir -p "${ENV_DIR}"
